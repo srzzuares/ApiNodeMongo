@@ -1,0 +1,109 @@
+* {
+    margin:0; padding:0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+
+@keyframes animate {
+    0%
+    {
+        filter: hue-rotate(0deg);
+    }
+
+    100%
+    {
+        filter: hue-rotate(360deg);
+    }
+}
+
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(-50deg,red 0%,black 50%);
+    animation: animate 10s linear infinite;
+}
+
+
+.box{
+    position: relative;
+    padding:50px;
+    width:330px; height:480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    box-shadow: 0 5px 35px rgba(0, 0, 0, 0.5);
+}
+
+.box::after{
+    content: '';
+    position: absolute;
+    top:5px ; left:5px ; right:5px ;bottom:5px ;
+    border-radius: 5px;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgb(255 255 255 / 18%) 0%,
+    rgb(255 255 255 / 4%) 10%, transparent 40%, transparent 90%, rgb(255 255 255 / 20%) 100%);
+}
+
+
+.box .form{
+    position: relative;
+    width: 100%;
+}
+
+
+.box .form h2{
+    color:beige;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.form-title{
+    color:bisque;
+    text-transform: uppercase;
+    font-weight: 500;
+    justify-content: center;    
+    justify-items: center;
+}
+
+.form-box input[type="text"],
+.form-box input[type="password"],
+.form-box button[type="submit"]{
+    background: none;
+    border:0;
+    display: block;
+    margin:20px auto;
+    padding: 14px 10px;
+    text-align: center;
+    border:2px solid;
+    width: 180px;
+    outline:none;color: wheat;border-radius: 25px;
+    transition: 0.25s;
+}
+
+
+.form-box input[type="text"]:focus,
+.form-box input[type="password"]:focus{
+    width: 230px;
+    border-color: aqua;
+}
+
+
+.form-box button[type="submit"]{
+    border: 0 ;
+    background:#5352ed;
+    cursor: pointer;
+    border:2px solid #3742fa;
+}
+
+
+.form-box button[type="submit"]:hover{
+    background: none;
+}
